@@ -17,7 +17,7 @@ The system follows a service-oriented design to ensure modularity and scalabilit
 
 ##  Execution Order
 
-### 1. Environment Setup
+### Environment Setup
 ```bash
 python -m venv venv
 .\venv\Scripts\activate  # Windows
@@ -34,7 +34,8 @@ uvicorn main:app --reload
 
 # Terminal 2: Start UI Dashboard
 streamlit run app.py
-```bash
+
+
 Key Features & Logic
 Automated Champion Selection: The system doesn't rely on a "one-size-fits-all" model. It automatically promotes the best-performing architecture per state based on the lowest RMSE.
 
