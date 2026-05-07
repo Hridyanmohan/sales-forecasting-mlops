@@ -1,0 +1,14 @@
+# Environments
+venv/
+.env
+
+# Data and Models
+data/*.csv
+data/*.xlsx
+models/*.pkl
+models/*.h5
+
+# Python cache
+__pycache__/
+*.pyc
+.vscode/
