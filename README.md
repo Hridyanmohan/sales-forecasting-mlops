@@ -16,26 +16,34 @@ The system follows a service-oriented design to ensure modularity and scalabilit
 * **Documentation:** LaTeX
 
 ##  Execution Order
-
+bash'''
 ### Environment Setup
-```bash
+
 python -m venv venv
 .\venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 
-# Clean data and engineer features
+2. Data & Training Pipeline
+Clean your data and engineer features before training the tournament.
+
+Bash
 python preprocessing.py
-
-# Run tournament and save champion models
 python trainer.py
+3. Launching the Services
+Open Terminal 1 for the API and Terminal 2 for the Dashboard.
 
-# Terminal 1: Start Backend API
+Terminal 1 (Backend):
+
+Bash
 uvicorn main:app --reload
+Terminal 2 (Frontend):
 
-# Terminal 2: Start UI Dashboard
+Bash
 streamlit run app.py
 
 
+
+### Environment Setup
 Key Features & Logic
 Automated Champion Selection: The system doesn't rely on a "one-size-fits-all" model. It automatically promotes the best-performing architecture per state based on the lowest RMSE.
 
