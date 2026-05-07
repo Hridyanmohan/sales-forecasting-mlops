@@ -1,43 +1,3 @@
-Data Science (End-to-End Time Series Forecasting System with API) 
-Objective:
-Build a production-ready forecasting system that: 
-1. Trains multiple forecasting algorithms 
-2. Compares and selects the best model 
-3. Exposes predictions via a REST API 
-4. Should be designed like real backend service 
-
-Problem Statement:
-Forecast next 8weeks of sales for each state using historical data. Your solution must: 
-• Handle missing dates / missing values (if any) 
-• Handle seasonality & trend 
-• Automatically select the best performing model 
-• Serve predictions via API
-
-Mandatory Models to Implement 
-Train and compare at least: 
-1. ARIMA / SARIMA 
-2. Facebook Prophet 
-3. XGBoost (with lag features) 
-4. LSTM (deep learning)
-   
-Feature Engineering
-You must create: 
-• Lag features (t-1, t-7, t-30) 
-• Rolling mean / std 
-• Day of week, month, holiday flag 
-• Train / validation split using time series logic (no leakage) 
-
-Retail Sales Forecasting System (MLOps Pipeline)
-
-
-Objective: To forecast 8-week sales for 50 states using an automated "Champion-Challenger" framework.
-
-Key Features:Feature Engineering: Implemented $t-1, t-7, t-30$ lags and rolling statistics to capture seasonality.Model Tournament: Automated comparison of SARIMA, Prophet, XGBoost, and LSTM.
-Selection Metric: Models are selected based on the lowest RMSE via a time-series validation split.
-Production API: Built with FastAPI for high-performance inference.
-Interactive UI: Built with Streamlit for business stakeholder visualization.
-
-
 # 📈 End-to-End Sales Forecasting MLOps System
 
 A production-grade forecasting solution designed to predict 8-week sales across 43 unique states. This project implements a **Champion-Challenger** architecture, transitioning from raw data to a live, decoupled web service.
@@ -74,7 +34,23 @@ uvicorn main:app --reload
 
 # Terminal 2: Start UI Dashboard
 streamlit run app.py
+```bash
+Key Features & Logic
+Automated Champion Selection: The system doesn't rely on a "one-size-fits-all" model. It automatically promotes the best-performing architecture per state based on the lowest RMSE.
+
+Time-Series Integrity: Strict chronological splitting ensures zero data leakage during the validation phase.
+
+System Resilience: Built-in logic identifies and bypasses numerical instabilities (such as Exploding Gradients in Deep Learning models) to maintain production uptime.
+
+Decoupled Workflow: The Frontend and Backend communicate via a standardized API, allowing for independent scaling of either layer.
+
+📄 Documentation
+The full technical report, including mathematical challenges, feature engineering deep-dives, and system integration workflows, is available here:
 
 
-## Documentation
+### Download Technical Report (PDF)
 You can find the full technical report here: https://github.com/Hridyanmohan/sales-forecasting-mlops/blob/main/Time_Series_Forecasting_System_with_API_Project_Report.pdf
+
+
+
+Developed as part of a Data Science & MLOps Case Study.
