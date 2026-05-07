@@ -8,4 +8,4 @@ Selection Metric: Models are selected based on the lowest RMSE via a time-series
 Production API: Built with FastAPI for high-performance inference.
 Interactive UI: Built with Streamlit for business stakeholder visualization.
 ## Documentation
-You can find the full technical report here:[./https://github.com/Hridyanmohan/sales-forecasting-mlops/blob/main/Time_Series_Forecasting_System_with_API_Project_Report.pdf)]
+You can find the full technical report here:[https://github.com/Hridyanmohan/sales-forecasting-mlops/blob/main/Time_Series_Forecasting_System_with_API_Project_Report.pdf)]
