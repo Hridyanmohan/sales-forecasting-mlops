@@ -15,34 +15,6 @@ The system follows a service-oriented design to ensure modularity and scalabilit
 * **Web:** FastAPI, Uvicorn, Streamlit
 * **Documentation:** LaTeX
 
-##  Execution Order
-bash'''
-### Environment Setup
-
-python -m venv venv
-.\venv\Scripts\activate  # Windows
-pip install -r requirements.txt
-
-2. Data & Training Pipeline
-Clean your data and engineer features before training the tournament.
-
-Bash
-python preprocessing.py
-python trainer.py
-3. Launching the Services
-Open Terminal 1 for the API and Terminal 2 for the Dashboard.
-
-Terminal 1 (Backend):
-
-Bash
-uvicorn main:app --reload
-Terminal 2 (Frontend):
-
-Bash
-streamlit run app.py
-
-
-
 ### Environment Setup
 Key Features & Logic
 Automated Champion Selection: The system doesn't rely on a "one-size-fits-all" model. It automatically promotes the best-performing architecture per state based on the lowest RMSE.
@@ -63,3 +35,22 @@ You can find the full technical report here: https://github.com/Hridyanmohan/sal
 
 
 Developed as part of a Data Science & MLOps Case Study.
+
+##  Execution Order
+### Environment Setup
+```bash
+python -m venv venv
+.\venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+
+# Clean data and engineer features
+python preprocessing.py
+
+# Run the state-wise tournament and save champion models
+python trainer.py
+
+# Terminal 1: Start Backend API
+uvicorn main:app --reload
+
+# Terminal 2: Start UI Dashboard
+streamlit run app.py
